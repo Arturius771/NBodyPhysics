@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,7 @@ public class DemoBodySpawner : MonoBehaviour
 
             if (spawnedBodies[numberOfPlanets - 1] == null) {
                 GameObject spawnBody = Instantiate(body, position, Quaternion.identity);
+                spawnBody.GetComponent<NetworkObject>().Spawn();
                 spawnedBodies[numberOfPlanets - 1] = spawnBody;
             }
             else {

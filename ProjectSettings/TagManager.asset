@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Click Surface
+  - Body Surface
   - Water
   - UI
-  - 
-  - 
+  - Nav Mesh
+  - Spaceship
   - 
   - 
   - 

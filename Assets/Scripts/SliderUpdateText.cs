@@ -8,6 +8,6 @@ public class SliderUpdateText : UpdateText
 
     public void ChangeText() {
         updatedText = this.gameObject.GetComponent<Slider>();
-        UpdateUIText(targetText, updatedText.value.ToString());
+        UpdateUIText(targetText, $"Number of planets: {updatedText.value}");
     }
 }

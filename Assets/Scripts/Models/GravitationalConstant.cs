@@ -1,5 +1,5 @@
 ﻿public class GravitationalConstant {
-    public const float g = GVariants.g100; 
+    public const float g = GVariants.g1; 
 
     private struct GVariants {
         public const float g = 6.67384e-11f;
