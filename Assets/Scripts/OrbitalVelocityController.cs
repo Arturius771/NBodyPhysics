@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class OrbitalVelocityController : MonoBehaviour {
 
-    public Rigidbody targetRigidbody;
-    public float initialVelocity;
-    public bool calculateOrbitalVelocity = true;
-    public bool reverseDirection = false;
+    [SerializeField] private Rigidbody targetRigidbody;
+    [SerializeField] private float initialVelocity;
+    [SerializeField] private bool calculateOrbitalVelocity = true;
+    [SerializeField] private bool reverseDirection = false;
 
     void Start() {
 

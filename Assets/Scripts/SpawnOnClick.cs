@@ -1,12 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class ClickDetector : MonoBehaviour
+public class SpawnOnClick : MonoBehaviour
 {
 
-    public LayerMask clickSurface;
-    public GameObject prefab;
-    public int clickRange = 500;
-    Camera cam;
+    [SerializeField] private LayerMask targetClickLayer;
+    [SerializeField] private GameObject prefab;
+    private Camera cam;
 
 
     // Start is called before the first frame update
@@ -18,11 +18,11 @@ public class ClickDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(MouseButton.right))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, clickRange, clickSurface)) {
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, targetClickLayer)) {
                 Vector3 position = hit.point;
                 Instantiate(prefab, position, Quaternion.identity);
             }

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class RotationController : MonoBehaviour
 {
-    Rigidbody rigidBody;
-    public Vector3 angularVelocity;
+    private Rigidbody rigidBody;
+    [SerializeField] private Vector3 angularVelocity;
 
     void Start() {
         rigidBody = GetComponent<Rigidbody>();

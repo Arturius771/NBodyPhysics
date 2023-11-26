@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Multiplayer.unity
     guid: 9290b5657e7c06a4d8a1510f0c5518fe
   - enabled: 1
-    path: Assets/Scenes/NavmeshNavigation.unity
+    path: Assets/Scenes/0NavmeshNavigation.unity
     guid: d12f262831692d14ead88ce29bafa955
+  - enabled: 1
+    path: Assets/Scenes/1LogisticsTransfer.unity
+    guid: 654469cf616bd0b458a0e0d35a891f7b
   m_configObjects: {}

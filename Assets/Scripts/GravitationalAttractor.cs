@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GravitationalAttractor : MonoBehaviour
 {
-    private new Rigidbody rigidbody;
+    private Rigidbody rigidbody;
     public static List<GravitationalAttractor> bodies;
 
     // Start is called before the first frame update

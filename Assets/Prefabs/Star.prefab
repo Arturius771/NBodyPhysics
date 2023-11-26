@@ -104,7 +104,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8580232311799153996, guid: 5a2d125ff3ecdee46afa9e88bc063e5d, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 2403534871
+      value: 1634239711
       objectReference: {fileID: 0}
     - target: {fileID: -6699882742415335682, guid: 5a2d125ff3ecdee46afa9e88bc063e5d, type: 3}
       propertyPath: SyncRotAngleX

@@ -4,35 +4,35 @@ using UnityEngine.UI;
 
 public class DemoBodySpawner : MonoBehaviour
 {
-    public GameObject body;
-    public GameObject numberOfPlanetsSlider;
-    public int intervalDistance;
-    public GameObject[] spawnedBodies; 
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject sliderController;
+    [SerializeField] private int intervalDistance;
+    private GameObject[] spawnedObjects; 
 
     private void Start() {
-        spawnedBodies = new GameObject[(int)numberOfPlanetsSlider.GetComponent<Slider>().maxValue];
+        spawnedObjects = new GameObject[(int)sliderController.GetComponent<Slider>().maxValue];
     }
 
     public void SpawnObject() {
-        int numberOfPlanets = (int)numberOfPlanetsSlider.GetComponent<Slider>().value;
+        int numberOfObjects = (int)sliderController.GetComponent<Slider>().value;
 
-        if(numberOfPlanets > 0) {
-            Vector3 position = new(numberOfPlanets * intervalDistance, 0, 0);
+        if(numberOfObjects > 0) {
+            Vector3 spawnPosition = new(numberOfObjects * intervalDistance, 0, 0);
 
-            if (spawnedBodies[numberOfPlanets - 1] == null) {
-                GameObject spawnBody = Instantiate(body, position, Quaternion.identity);
-                spawnBody.GetComponent<NetworkObject>().Spawn();
-                spawnedBodies[numberOfPlanets - 1] = spawnBody;
+            if (spawnedObjects[numberOfObjects - 1] == null) {
+                GameObject spawnedObject = Instantiate(prefab, spawnPosition, Quaternion.identity);
+                spawnedObject.GetComponent<NetworkObject>().Spawn();
+                spawnedObjects[numberOfObjects - 1] = spawnedObject;
             }
             else {
-                Destroy(spawnedBodies[numberOfPlanets]);
+                Destroy(spawnedObjects[numberOfObjects]);
             }
             
         }
         else {
-            foreach (GameObject body in spawnedBodies)
+            foreach (GameObject objectInstance in spawnedObjects)
             {
-                Destroy(body);
+                Destroy(objectInstance);
             }
         }
     }
