@@ -1,0 +1,20 @@
+.slider {
+    max-width: 100%;
+    min-width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-right;
+    white-space: normal;
+    align-items: stretch;
+    align-self: auto;
+    flex-grow: 1;
+    flex-shrink: 0;
+    text-overflow: clip;
+    right: auto;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    -unity-text-outline-color: rgba(255, 255, 255, 0);
+}

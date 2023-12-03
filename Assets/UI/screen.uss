@@ -1,0 +1,16 @@
+.dev-toolkit {
+    align-items: flex-end;
+    justify-content: flex-start;
+    max-height: 20%;
+    max-width: 50%;
+    flex-grow: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: auto;
+    top: 80%;
+    bottom: auto;
+    min-height: 10%;
+    min-width: 50px;
+    left: auto;
+    right: auto;
+}

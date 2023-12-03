@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LogisticsNodeController : MonoBehaviour
 {
-
     private int id;
     [SerializeField] private int resource = 1;
     [SerializeField] private GameObject targetHome; 
@@ -17,9 +16,8 @@ public class LogisticsNodeController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+        if (other == null) return;
         LogisticsNodeController otherNode = other.GetComponent<LogisticsNodeController>();
-
-        if (otherNode == null || other == null) return;
 
         if (otherNode.id < id) {
             otherNode.resource += resource;

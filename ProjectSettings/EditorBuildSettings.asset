@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1LogisticsTransfer.unity
     guid: 654469cf616bd0b458a0e0d35a891f7b
+  - enabled: 1
+    path: Assets/Scenes/2UIToolkit.unity
+    guid: 702ac9ef202be424f99d693a924e7c11
   m_configObjects: {}

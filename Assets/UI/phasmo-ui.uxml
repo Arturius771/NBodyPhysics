@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/dev-toolkit.uss?fileID=7433441132597879392&amp;guid=69eefc9c2c588c849b712b3f7c160a3c&amp;type=3#dev-toolkit" />
+    <Style src="project://database/Assets/UI/screen.uss?fileID=7433441132597879392&amp;guid=964422b7d3d07974e8b8c96ff675a9e6&amp;type=3#screen" />
+    <ui:VisualElement name="screen" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="dev-toolkit" class="dev-toolkit" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:SliderInt picking-mode="Ignore" label="SliderInt" value="42" high-value="100" class="slider" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

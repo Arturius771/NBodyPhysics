@@ -1,15 +1,20 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class SliderUpdateText : UpdateText
 {
-    [SerializeField] private TextMeshProUGUI targetText;
-    [SerializeField] private Slider updatedText;
     [SerializeField] private string textTemplate = "Number of planets: ";
+    [SerializeField] private string targetSliderId = "NumberOfPlanetsSlider";
+    VisualElement root;
+    SliderInt slider;
 
-    public void ChangeText() {
-        updatedText = this.gameObject.GetComponent<Slider>();
-        UpdateUIText(targetText, $"{textTemplate}{updatedText.value}");
+    private void OnEnable() {
+        root = GetComponent<UIDocument>().rootVisualElement;   
+        slider = root.Q<SliderInt>(targetSliderId);
+    }
+
+    public void Update() {
+        Debug.Log(textTemplate + slider.value.ToString());
+        slider.label = textTemplate + slider.value.ToString();
     }
 }

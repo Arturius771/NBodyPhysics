@@ -1,20 +1,25 @@
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class DemoBodySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject prefab;
-    [SerializeField] private GameObject sliderController;
     [SerializeField] private int intervalDistance;
-    private GameObject[] spawnedObjects; 
+    private GameObject[] spawnedObjects;
+    VisualElement root;
+    SliderInt slider;
 
     private void Start() {
-        spawnedObjects = new GameObject[(int)sliderController.GetComponent<Slider>().maxValue];
+
+        root = GetComponent<UIDocument>().rootVisualElement;
+        slider = root.Q<SliderInt>("NumberOfPlanetsSlider");
+
+        spawnedObjects = new GameObject[slider.highValue];
     }
 
     public void SpawnObject() {
-        int numberOfObjects = (int)sliderController.GetComponent<Slider>().value;
+        int numberOfObjects = slider.value;
 
         if(numberOfObjects > 0) {
             Vector3 spawnPosition = new(numberOfObjects * intervalDistance, 0, 0);

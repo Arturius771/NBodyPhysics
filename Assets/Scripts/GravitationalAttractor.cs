@@ -27,9 +27,8 @@ public class GravitationalAttractor : MonoBehaviour
         float distance = Vector3.Distance(otherRigidBody.position, rigidbody.position);
 
         if (distance > 0f) {
-            float gravitationalConstant = GravitationalConstant.g;
-            float force = 
-                gravitationalConstant 
+            float force =
+                GravitationalConstant.g
                 * otherRigidBody.mass 
                 * rigidbody.mass 
                 / Mathf.Pow(distance, 2); 
