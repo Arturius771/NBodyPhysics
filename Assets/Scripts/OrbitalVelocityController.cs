@@ -8,7 +8,15 @@ public class OrbitalVelocityController : MonoBehaviour {
     [SerializeField] private bool reverseDirection = false;
 
     void Start() {
+        CalculateVelocity();
+        
+    }
 
+    private void OnEnable() {
+        CalculateVelocity();
+    }
+
+    private void CalculateVelocity() {
         Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
         Vector3 direction = rigidbody.position - targetRigidbody.position;
         float distance = direction.magnitude;

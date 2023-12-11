@@ -1,9 +1,8 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class UpdateText : MonoBehaviour
-{
-    public void UpdateUIText(TextMeshProUGUI targetText, string updatedText) {
-        targetText.text = updatedText;
+public class UpdateText<T> : MonoBehaviour where T : TextElement {
+    public void UpdateTextElement(TextElement element, string updatedText) {
+        element.text = updatedText;
     }
 }

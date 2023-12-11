@@ -1,16 +1,11 @@
 using UnityEngine;
 
-public class RotationController : MonoBehaviour
-{
-    private Rigidbody rigidBody;
+public class RotationController : MonoBehaviour {
     [SerializeField] private Vector3 angularVelocity;
-
-    void Start() {
-        rigidBody = GetComponent<Rigidbody>();
-    }
 
     void FixedUpdate() {
         Quaternion deltaRotation = Quaternion.Euler(angularVelocity * Time.fixedDeltaTime);
-        rigidBody.MoveRotation(rigidBody.rotation * deltaRotation);
+
+        transform.rotation *= deltaRotation;
     }
 }

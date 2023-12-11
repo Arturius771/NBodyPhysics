@@ -1,20 +1,30 @@
 .slider {
-    max-width: 100%;
+    max-width: 300px;
     min-width: auto;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     -unity-font-style: bold;
-    -unity-text-align: middle-right;
+    -unity-text-align: middle-left;
     white-space: normal;
     align-items: stretch;
     align-self: auto;
     flex-grow: 1;
     flex-shrink: 0;
-    text-overflow: clip;
+    text-overflow: ellipsis;
     right: auto;
     color: rgb(255, 255, 255);
     font-size: 14px;
-    -unity-text-outline-color: rgba(255, 255, 255, 0);
+}
+
+.button {
+    max-height: 30px;
+    min-height: 30px;
+    min-width: 100px;
+    max-width: 500px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }

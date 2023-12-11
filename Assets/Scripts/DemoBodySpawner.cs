@@ -6,22 +6,28 @@ public class DemoBodySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject prefab;
     [SerializeField] private int intervalDistance;
+    [SerializeField] private GameObject uiDocument; // TODO - we need some DI to handle finding the root UIDocument component in other GameObjects
+    [SerializeField] private string targetSliderId = "NumberOfPlanetsSlider";
     private GameObject[] spawnedObjects;
     VisualElement root;
     SliderInt slider;
 
     private void Start() {
-
-        root = GetComponent<UIDocument>().rootVisualElement;
-        slider = root.Q<SliderInt>("NumberOfPlanetsSlider");
+        root = uiDocument.GetComponent<UIDocument>().rootVisualElement;
+        slider = root.Q<SliderInt>(targetSliderId);
+        slider.RegisterCallback<ChangeEvent<int>>(OnSliderValueChanged);
 
         spawnedObjects = new GameObject[slider.highValue];
+    }
+
+    private void OnSliderValueChanged(ChangeEvent<int> valueChangeEvent) {
+        SpawnObject();
     }
 
     public void SpawnObject() {
         int numberOfObjects = slider.value;
 
-        if(numberOfObjects > 0) {
+        if (numberOfObjects > 0) {
             Vector3 spawnPosition = new(numberOfObjects * intervalDistance, 0, 0);
 
             if (spawnedObjects[numberOfObjects - 1] == null) {
