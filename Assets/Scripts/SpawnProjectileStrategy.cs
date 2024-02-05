@@ -4,14 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SpawnProjectileStrategy", menuName = "*/Strategies/SpawnProjectileStrategy")]
 public class SpawnProjectileStrategy : EnemyEncounterStrategy {
     [SerializeField] private GameObject prefab;
-    private GameObject enemy;
-    private GameObject gameObject; 
 
-    public override void HandleEncounter(GameObject newEnemy, GameObject newGameObject) {
-        enemy = newEnemy;
-        gameObject = newGameObject;
+    public override void HandleEncounter(GameObject enemy, GameObject parentShip) {
 
-        GameObject spawnedPrefab = Instantiate(prefab, gameObject.transform.position, Quaternion.identity);
+        GameObject spawnedPrefab = Instantiate(prefab, parentShip.transform.position, Quaternion.identity);
 
         if (spawnedPrefab.GetComponent<MissileController>()) {
             spawnedPrefab.GetComponent<MissileController>().target = enemy;

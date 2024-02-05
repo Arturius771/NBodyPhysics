@@ -4,6 +4,8 @@ using UnityEngine.AI;
 public class SpaceshipController : MonoBehaviour
 {
     private NavMeshAgent agent;
+    private Vector3 targetPosition;
+    [SerializeField] private int stopMovingRange = 50;
     [SerializeField] private LayerMask clickLayer;
 
     private void Start() {
@@ -21,9 +23,14 @@ public class SpaceshipController : MonoBehaviour
                 SetDestination(hit.point);
             }
         }
+
+        if(Vector3.Distance(this.transform.position, targetPosition) < stopMovingRange) {
+            agent.ResetPath();
+        }
     }
 
     public void SetDestination(Vector3 targetPosition) {
+        this.targetPosition = targetPosition;
         agent.SetDestination(targetPosition);
     }
 }

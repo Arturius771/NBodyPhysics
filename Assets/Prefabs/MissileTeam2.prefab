@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: enemyTeamLayerName
       value: Team1
       objectReference: {fileID: 0}
+    - target: {fileID: 3071252217791974010, guid: 9a9146bc578f8af40a03b90ecd503ea5, type: 3}
+      propertyPath: enemyTeamLayerName
+      value: Team1
+      objectReference: {fileID: 0}
     - target: {fileID: 3355133514118370916, guid: 9a9146bc578f8af40a03b90ecd503ea5, type: 3}
       propertyPath: m_Name
       value: MissileTeam2
@@ -20,9 +24,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3802190938203382222, guid: 9a9146bc578f8af40a03b90ecd503ea5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19d7c08027a8306468a26207232546d5, type: 2}
     - target: {fileID: 4056772524503839045, guid: 9a9146bc578f8af40a03b90ecd503ea5, type: 3}
       propertyPath: enemyTeamLayerName
       value: Team1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866277652495133858, guid: 9a9146bc578f8af40a03b90ecd503ea5, type: 3}
+      propertyPath: speed
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866277652495133858, guid: 9a9146bc578f8af40a03b90ecd503ea5, type: 3}
+      propertyPath: maxRange
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620523559273089194, guid: 9a9146bc578f8af40a03b90ecd503ea5, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5646384829354307736, guid: 9a9146bc578f8af40a03b90ecd503ea5, type: 3}
       propertyPath: m_RootOrder

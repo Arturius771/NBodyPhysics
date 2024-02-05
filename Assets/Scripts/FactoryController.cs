@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,8 +8,10 @@ public class FactoryController : MonoBehaviour
     [SerializeField] private GameObject uiDocument;
     [SerializeField] private LogisticsNodeController logisticsNode;
     [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject spawnLocation;
     [SerializeField] private GameObject resourceHud;
-    [SerializeField] private int resource = 10;
+    [SerializeField] private int resources = 10;
+    [SerializeField] private BuildShipStrategy strategy;
     VisualElement root;
     Button spawnSpaceshipButton;
     Label resourceLabel;
@@ -21,17 +24,17 @@ public class FactoryController : MonoBehaviour
         resourceLabel = root.Q<Label>("ResourceValueLabel");
         spawnSpaceshipButton.clickable.clicked += OnSpawnSpaceshipButtonClicked;
     }
-
+     
     private void FixedUpdate() {
-        SetUIText();
-        resource += logisticsNode.GetResource();
+        resources += logisticsNode.GetResource();
+        SetUIResourcesAvailableText();
         logisticsNode.SetResource(0);
         ShowResourceHud();
     }
 
 
     private void ShowResourceHud() {
-        if (resource > 0) {
+        if (resources > 0) {
             resourceHud.SetActive(true);
         }
         else {
@@ -40,18 +43,25 @@ public class FactoryController : MonoBehaviour
     }
 
     private void OnSpawnSpaceshipButtonClicked() {
-        if(resource >= 1) {
-            resource -= 1;
-            Instantiate(prefab, GetComponent<Transform>().position, Quaternion.identity);
-        }        
+        StartCoroutine(BuildStrikeCraft());
     }
 
-    private void SetUIText() {
-        if (resource <= 0) {
+    private void SetUIResourcesAvailableText() {
+        if (resources <= 0) {
             resourceLabel.text = "No more resources!";
         }
         else {
-            resourceLabel.text = resource.ToString();
+            resourceLabel.text = resources.ToString();
+        }
+    }
+
+
+    private IEnumerator BuildStrikeCraft() {
+        if(resources >= strategy.GetResourceCost()) {
+            resources -= strategy.GetResourceCost();
+            SetUIResourcesAvailableText();
+            yield return new WaitForSeconds(strategy.GetBuildTime());
+            strategy.BuildShip(spawnLocation.transform);
         }
     }
 }

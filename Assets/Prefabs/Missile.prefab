@@ -84,6 +84,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2674203137726289884, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674203137726289884, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674203137726289884, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: m_Size.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564697373265814128, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3614756816097599986, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -104,10 +120,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Missile
       objectReference: {fileID: 0}
+    - target: {fileID: 4941269267344507076, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034848359896643736, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: health
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6541959126351784816, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e0d6f3fafc0e49641905dd92320214f2, type: 2}
+      objectReference: {fileID: 2100000, guid: 9d8fe599c30f77d4fab4d33dc388ff20, type: 2}
     - target: {fileID: 7363985213716822334, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -118,6 +142,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7363985213716822334, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
       propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363985213716822334, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7363985213716822334, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
@@ -135,11 +163,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4648411420110118106, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 4866277652495133858}
-    - targetCorrespondingSourceObject: {fileID: 4648411420110118106, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4056772524503839045}
+      addedObject: {fileID: 4866277652495133858}
   m_SourcePrefab: {fileID: 100100000, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
 --- !u!1 &3355133514118370916 stripped
 GameObject:
@@ -158,20 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b652279c2e452844905be3b117680fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 250
   maxRange: 500
   target: {fileID: 0}
---- !u!114 &4056772524503839045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3355133514118370916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cfc5d490c1689f42a1e9a4b7da25604, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  enemyTeamLayerName: Team2

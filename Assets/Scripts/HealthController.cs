@@ -9,16 +9,14 @@ public class HealthController : MonoBehaviour
     void Update()
     {
         if(health <= 0) {
-            Destroy(transform.parent.gameObject);
             Destroy(this.gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 
     private void OnTriggerEnter(Collider other) {
-
         if (other.gameObject.layer == LayerMask.NameToLayer(enemyTeamLayerName)) {
-            health -= 10;
-            Destroy(other.gameObject);
+            health -= 1;
         }
     }
 }

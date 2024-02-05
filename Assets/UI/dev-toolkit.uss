@@ -18,13 +18,74 @@
     font-size: 14px;
 }
 
+.label {
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
 .button {
     max-height: 30px;
     min-height: 30px;
     min-width: 100px;
-    max-width: 500px;
+    max-width: 200px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+
+.dev-toolkit {
+    align-items: flex-end;
+    justify-content: flex-start;
+    max-height: 20%;
+    max-width: 50%;
+    flex-grow: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: auto;
+    top: 75%;
+    bottom: auto;
+    min-height: 10%;
+    min-width: 50px;
+    left: auto;
+    right: auto;
+    opacity: 1;
+    position: absolute;
+    visibility: visible;
+    display: flex;
+    overflow: visible;
+}
+
+.build-menu {
+    max-width: 25%;
+    max-height: 20%;
+    margin-top: 0;
+    margin-left: 0;
+    left: 20px;
+    top: 20px;
+    -unity-text-align: upper-center;
+    white-space: normal;
+    text-overflow: clip;
+}
+
+.main-menu {
+    align-items: flex-end;
+    justify-content: flex-start;
+    max-height: 20%;
+    max-width: 50%;
+    flex-grow: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: auto;
+    top: 10%;
+    bottom: 10%;
+    min-height: 10%;
+    min-width: 50px;
+    left: 30%;
+    right: auto;
+    opacity: 1;
+    position: absolute;
+    visibility: visible;
+    display: flex;
+    overflow: visible;
 }

@@ -1,21 +1,24 @@
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-    public float zoomSpeed = 5f;
-    public float rotationSpeed = 2f;
+    public float moveSpeed = 5f;
 
     void Update() {
-        float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
-        if (scrollWheel != 0) {
-            ZoomCamera(scrollWheel);
-        }
-
-        //RotateCamera();
+        CameraMovement();
     }
 
-    void ZoomCamera(float scrollDelta) {
-        Camera.main.fieldOfView -= scrollDelta * zoomSpeed;
-        Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 10f, 60f);
+    void CameraMovement() {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
+
+        if (moveDirection != Vector3.zero) {
+            // Adjust the camera position based on the WASD input
+            transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
+        }
+
+        // RotateCamera();
     }
 
     //void RotateCamera() {

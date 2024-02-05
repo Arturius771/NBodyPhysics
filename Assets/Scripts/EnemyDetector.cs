@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDetector : MonoBehaviour {
     [SerializeField] private EnemyEncounterStrategy strategy;
     [SerializeField] private string enemyTeamLayerName = "Team2";
-    [SerializeField] private int checkFrequency = 1;
+    [SerializeField] private float checkFrequency = 1;
     private readonly List<GameObject> enemies = new();
 
 
