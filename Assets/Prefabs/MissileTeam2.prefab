@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: enemyTeamLayerName
       value: Team1
       objectReference: {fileID: 0}
+    - target: {fileID: 4510198722356431783, guid: 9a9146bc578f8af40a03b90ecd503ea5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19d7c08027a8306468a26207232546d5, type: 2}
     - target: {fileID: 4866277652495133858, guid: 9a9146bc578f8af40a03b90ecd503ea5, type: 3}
       propertyPath: speed
       value: 250

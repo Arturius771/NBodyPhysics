@@ -7,11 +7,10 @@ public class FactoryController : MonoBehaviour
 {
     [SerializeField] private GameObject uiDocument;
     [SerializeField] private LogisticsNodeController logisticsNode;
-    [SerializeField] private GameObject prefab;
     [SerializeField] private GameObject spawnLocation;
     [SerializeField] private GameObject resourceHud;
     [SerializeField] private int resources = 10;
-    [SerializeField] private BuildShipStrategy strategy;
+    [SerializeField] private BuildStrategy strategy;
     VisualElement root;
     Button spawnSpaceshipButton;
     Label resourceLabel;
@@ -22,6 +21,10 @@ public class FactoryController : MonoBehaviour
         root = uiDocument.GetComponent<UIDocument>().rootVisualElement;
         spawnSpaceshipButton = root.Q<Button>("SpawnSpaceshipButton");
         resourceLabel = root.Q<Label>("ResourceValueLabel");
+
+        SetUIResourcesAvailableText();
+
+
         spawnSpaceshipButton.clickable.clicked += OnSpawnSpaceshipButtonClicked;
     }
      
@@ -61,7 +64,7 @@ public class FactoryController : MonoBehaviour
             resources -= strategy.GetResourceCost();
             SetUIResourcesAvailableText();
             yield return new WaitForSeconds(strategy.GetBuildTime());
-            strategy.BuildShip(spawnLocation.transform);
+            strategy.Build(spawnLocation.transform);
         }
     }
 }
