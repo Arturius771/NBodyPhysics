@@ -15,7 +15,7 @@ public class HealthController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.layer == LayerMask.NameToLayer(enemyTeamLayerName)) {
+        if (other.gameObject.layer == LayerMask.NameToLayer(enemyTeamLayerName) && other.gameObject.name != "EnemyDetector") {
             health -= 1;
         }
     }

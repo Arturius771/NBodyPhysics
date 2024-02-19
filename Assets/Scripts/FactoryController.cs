@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -9,7 +10,8 @@ public class FactoryController : MonoBehaviour
     [SerializeField] private LogisticsNodeController logisticsNode;
     [SerializeField] private GameObject spawnLocation;
     [SerializeField] private GameObject resourceHud;
-    [SerializeField] private int resources = 10;
+    [SerializeField] private int metalResource = 10;
+    [SerializeField] private int energyResource = 10;
     [SerializeField] private BuildStrategy strategy;
     VisualElement root;
     Button spawnSpaceshipButton;
@@ -29,15 +31,17 @@ public class FactoryController : MonoBehaviour
     }
      
     private void FixedUpdate() {
-        resources += logisticsNode.GetResource();
+        if(logisticsNode != null) { 
+            metalResource += logisticsNode.GetMetalResource(); 
+        }
         SetUIResourcesAvailableText();
-        logisticsNode.SetResource(0);
+        logisticsNode.SetMetalResource(0);
         ShowResourceHud();
     }
 
 
     private void ShowResourceHud() {
-        if (resources > 0) {
+        if (metalResource > 0) {
             resourceHud.SetActive(true);
         }
         else {
@@ -50,21 +54,29 @@ public class FactoryController : MonoBehaviour
     }
 
     private void SetUIResourcesAvailableText() {
-        if (resources <= 0) {
+        if (metalResource <= 0) {
             resourceLabel.text = "No more resources!";
         }
         else {
-            resourceLabel.text = resources.ToString();
+            resourceLabel.text = metalResource.ToString();
         }
     }
 
 
     private IEnumerator BuildStrikeCraft() {
-        if(resources >= strategy.GetResourceCost()) {
-            resources -= strategy.GetResourceCost();
+        if(metalResource >= strategy.GetMetalResourceCost()) {
+            metalResource -= strategy.GetMetalResourceCost();
             SetUIResourcesAvailableText();
+            StartCoroutine(DrainEnergy());
             yield return new WaitForSeconds(strategy.GetBuildTime());
             strategy.Build(spawnLocation.transform);
+        }
+    }
+
+    private IEnumerator DrainEnergy() {
+        for (int i = 0; i <= strategy.GetBuildTime(); i++) {
+            yield return new WaitForSeconds(1);
+            energyResource -= strategy.GetEnergyResourceDrainRate();
         }
     }
 }

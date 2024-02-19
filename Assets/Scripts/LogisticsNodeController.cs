@@ -5,7 +5,7 @@ using UnityEngine;
 public class LogisticsNodeController : MonoBehaviour
 {
     [SerializeField] private int id;
-    [SerializeField] private int resource = 1;
+    [SerializeField] private int metalResource = 1;
     [SerializeField] private GameObject targetHome;
     [SerializeField] private GameObject resourceHud;
     [SerializeField] private bool GenerateResources = true;
@@ -26,13 +26,13 @@ public class LogisticsNodeController : MonoBehaviour
         LogisticsNodeController otherNode = other.GetComponent<LogisticsNodeController>();
 
         if (otherNode.id < id) {
-            otherNode.resource += resource;
-            resource = 0;
+            otherNode.metalResource += metalResource;
+            metalResource = 0;
         }
     }
 
     private void Update() {
-        if (resource > 0) {
+        if (metalResource > 0) {
             resourceHud.SetActive(true);
         }
         else { 
@@ -40,19 +40,19 @@ public class LogisticsNodeController : MonoBehaviour
         }
     }
 
-    public int GetResource() {
-        return resource;
+    public int GetMetalResource() {
+        return metalResource;
     }
 
-    public void SetResource(int newResource) {
-        resource = newResource;
+    public void SetMetalResource(int newResource) {
+        metalResource = newResource;
     }
 
     IEnumerator SpawnResources() {
         while (GenerateResources) {
             yield return new WaitForSeconds(2);
 
-            resource += 1;
+            metalResource += 1;
         }
     }
 }

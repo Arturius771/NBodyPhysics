@@ -23,12 +23,11 @@ public class MainMenuController : MonoBehaviour
     }
 
     private void OnStartButtonClick() {
-        Debug.Log("here");
         SceneManager.LoadScene("3Playtest");
     }
 
     private void OnSendFeedbackButtonClick() {
-        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSe3PzN0A9dBB7fAO4lulAxPAfdQtCIJ97-YnESCxEEFGEV-yg/viewform?usp=sf_link");
+        Application.OpenURL("https://docs.google.com/forms/d/1fFBFRc8WF5dCRHoOMPoxWIUaMGMCVrceE_lyHu3tRp0/edit");
     }
 
     private void OnQuitButtonClick() {

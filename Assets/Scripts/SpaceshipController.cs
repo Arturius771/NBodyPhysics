@@ -7,6 +7,7 @@ public class SpaceshipController : MonoBehaviour
     private Vector3 targetPosition;
     [SerializeField] private int stopMovingRange = 50;
     [SerializeField] private LayerMask clickLayer;
+    public bool selected = false;
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
@@ -15,7 +16,7 @@ public class SpaceshipController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {        
-        if (Input.GetMouseButtonDown(MouseButton.right)) {
+        if (selected && Input.GetMouseButtonDown(MouseButton.right)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Debug.DrawRay(ray.origin, ray.direction * 10000000, Color.green, 5f); 
 

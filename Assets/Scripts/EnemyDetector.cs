@@ -14,7 +14,7 @@ public class EnemyDetector : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.layer == LayerMask.NameToLayer(enemyTeamLayerName)) {
+        if (other.gameObject.layer == LayerMask.NameToLayer(enemyTeamLayerName) && other.gameObject.name == "HealthController") {
             if (!enemies.Contains(other.gameObject)) {
                 enemies.Add(other.gameObject);
             }
@@ -32,7 +32,7 @@ public class EnemyDetector : MonoBehaviour {
     IEnumerator CheckForEnemies() {
         while (true) {
             yield return new WaitForSeconds(checkFrequency);
-
+            
             if (enemies.Count > 0) {
                 GameObject closestEnemy = GetClosestEnemy();
                 if (closestEnemy != null) {
@@ -55,7 +55,6 @@ public class EnemyDetector : MonoBehaviour {
                 }
             }
         }
-
         return closestEnemy;
     }
 }
