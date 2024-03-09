@@ -8,6 +8,6 @@ public class BulletController : MonoBehaviour
 
     void Update() {
         // Move the projectile in its direction at the specified speed
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * Vector3.forward);
     }
 }
