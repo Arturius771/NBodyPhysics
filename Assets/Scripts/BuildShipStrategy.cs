@@ -3,25 +3,24 @@
 [CreateAssetMenu(fileName = "BuildShipStrategy", menuName = "*/Strategies/BuildShipStrategy")]
 public class BuildShipStrategy : BuildStrategy {
     [SerializeField] private GameObject prefabToBuild;
-    [SerializeField] private int strikeCraftMetalResourceCost = 50;
-    [SerializeField] private int strikeCraftEnergyDrainRate = 50;
-    [SerializeField] private int strikeCraftBuildTime = 30;
+    [SerializeField] private int metalResourceCost = 50;
+    [SerializeField] private int energyResourceDrainRate = 50;
+    [SerializeField] private int buildTime = 30;
 
     public override void Build(Transform spawnLocation) {
         Instantiate(prefabToBuild, spawnLocation.position, Quaternion.identity);
-
     }
 
     public override int GetMetalResourceCost() {
-        return strikeCraftMetalResourceCost;
+        return metalResourceCost;
     }
 
     public override int GetEnergyResourceDrainRate() {
-        return strikeCraftEnergyDrainRate;
+        return energyResourceDrainRate;
     }
 
     public override int GetBuildTime() {
-        return strikeCraftBuildTime;
+        return buildTime;
     }
 }
 

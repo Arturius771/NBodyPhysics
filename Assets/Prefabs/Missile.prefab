@@ -5000,6 +5000,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 19.76
       objectReference: {fileID: 0}
+    - target: {fileID: 3278470533746313712, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3564697373265814128, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
       propertyPath: m_Layer
       value: 9
