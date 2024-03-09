@@ -12,6 +12,8 @@ public class NetworkManagerController : MonoBehaviour {
     Button quitToMenuButton;
     NetworkManager networkManager;
 
+    // TODO - review for improvements and bugs
+
     // Start is called before the first frame update
     void OnEnable() {
         root = uiDocument.GetComponent<UIDocument>().rootVisualElement;
