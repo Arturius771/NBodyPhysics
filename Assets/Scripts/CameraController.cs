@@ -1,9 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
     public float moveSpeed = 5f;
-
+    [SerializeField] private float rotationSpeed = 0.1f;
+    [SerializeField] private float zoomSpeed = 5f;
     void Update() {
+        RotateCamera();
+        ZoomCamera();
         CameraMovement();
     }
 
@@ -18,11 +22,30 @@ public class CameraController : MonoBehaviour {
             transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
         }
 
-        // RotateCamera();
     }
+    void ZoomCamera()
+    {
+        float scrollDelta = Input.GetAxis("Mouse ScrollWheel");
+       if (scrollDelta != 0)
+        {
+            Camera.main.fieldOfView -= scrollDelta * zoomSpeed;
+            Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 10f, 60f);
 
-    //void RotateCamera() {
-    //    float horizontalInput = Input.GetAxis("Mouse X");
-    //    transform.Rotate(Vector3.up, horizontalInput * rotationSpeed);
-    //}
+
+
+        }
+    }
+    void RotateCamera()
+    {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            transform.Rotate(Vector3.down * rotationSpeed);
+
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.Rotate(Vector3.up * rotationSpeed) ;
+
+        }
+    }
 }
