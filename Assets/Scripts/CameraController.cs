@@ -22,8 +22,6 @@ public class CameraController : MonoBehaviour {
             transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
         }
 
-        //added awesome new feature
-
     }
     void ZoomCamera()
     {
