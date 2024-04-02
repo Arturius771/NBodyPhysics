@@ -4,6 +4,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
+    // TODO: Create base camera class and inherit
     public float moveSpeed = 20f;
     [SerializeField] private float rotationSpeed = 0.1f;
     [SerializeField] private float zoomSpeed = 5f;
