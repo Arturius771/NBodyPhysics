@@ -23,7 +23,7 @@ public class MainMenuController : MonoBehaviour
     }
 
     private void OnStartButtonClick() {
-        SceneManager.LoadScene("3Playtest");
+        SceneManager.LoadScene("5SpaceshipControl");
     }
 
     private void OnSendFeedbackButtonClick() {

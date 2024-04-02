@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/4PlaytestMenu.unity
     guid: 652458c986ac4c748b14838e3880b32c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3Playtest.unity
     guid: 90a61ee1eafd166469ff40ca381afe71
   - enabled: 1
