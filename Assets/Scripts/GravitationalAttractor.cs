@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GravitationalAttractor : MonoBehaviour
 {
-    private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
     public static List<GravitationalAttractor> bodies;
 
     void Start()

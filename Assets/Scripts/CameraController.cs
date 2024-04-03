@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour {
 
         if (moveDirection != Vector3.zero) {
             // Adjust the camera position based on the WASD input
-            transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(moveSpeed * Time.deltaTime * moveDirection, Space.World);
         }
 
     }
