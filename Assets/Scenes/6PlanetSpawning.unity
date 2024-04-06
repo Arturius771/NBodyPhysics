@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22472825621aa614eb42f4acc22ddbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1238168886696291091, guid: 5a2d125ff3ecdee46afa9e88bc063e5d, type: 3}
+  prefab: {fileID: 1119092060593637157, guid: 15139a05fbf962a4cb138bacd28f420c, type: 3}
   intervalDistance: -2000
   uiDocument: {fileID: 132092058}
   targetSliderId: NumberOfPlanetsSlider
