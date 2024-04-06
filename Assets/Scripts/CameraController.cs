@@ -66,18 +66,18 @@ public class CameraController : MonoBehaviour {
 
         Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x;
 
-        transform.position += moveDir * moveSpeed * Time.deltaTime;
+        transform.position += moveSpeed * Time.deltaTime * moveDir;
     }
 
     IEnumerator IncreaseSpeed()
     {
         yield return new WaitForSeconds(.5f);
-        if (increaseSpeed)
-        {
+
+        if (increaseSpeed){
             
-            moveSpeed = moveSpeed + 100;
-            Debug.Log("Test");
+            moveSpeed += 100;
         }
+
         StartCoroutine(IncreaseSpeed());
 
     }
