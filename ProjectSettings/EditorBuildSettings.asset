@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/5SpaceshipControl.unity
     guid: 7351da3a10ef855428e19484c65335d7
+  - enabled: 1
+    path: Assets/Scenes/6PlanetSpawning.unity
+    guid: 63e19ff6665b1674fa0abcbe79e73db5
   m_configObjects: {}
