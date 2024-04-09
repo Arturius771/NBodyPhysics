@@ -46,11 +46,11 @@ public class CameraController : MonoBehaviour {
         }
 
 
-        if (Input.GetMouseButtonDown(1)) {
+        if (Input.GetMouseButtonDown(2)) {
             dragPanMoveActive = true;
             lastMousePosition = Input.mousePosition;
         }
-        if (Input.GetMouseButtonUp(1)) {
+        if (Input.GetMouseButtonUp(2)) {
             dragPanMoveActive = false;
         }
 
@@ -62,7 +62,6 @@ public class CameraController : MonoBehaviour {
 
             lastMousePosition = Input.mousePosition;
         }
-
 
         Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x;
 
@@ -81,8 +80,6 @@ public class CameraController : MonoBehaviour {
         StartCoroutine(IncreaseSpeed());
 
     }
-
-
     void RotateCamera() {
         float rotateDir = 0f;
 

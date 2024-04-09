@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/dev-toolkit.uss?fileID=7433441132597879392&amp;guid=69eefc9c2c588c849b712b3f7c160a3c&amp;type=3#dev-toolkit" />
-    <ui:VisualElement name="screen" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+    <ui:VisualElement name="screen" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 978px;">
         <ui:VisualElement name="build-menu" class="build-menu" style="left: 20px; display: flex; visibility: visible; flex-direction: row;">
             <ui:Label tabindex="-1" text="Metal:" display-tooltip-when-elided="true" name="MetalLabel" class="label" style="left: auto; flex-direction: column; min-width: auto; -unity-text-align: upper-left;" />
             <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="MetalValueLabel" class="label" style="-unity-text-align: upper-left;" />
@@ -10,7 +10,7 @@
             <ui:Button text="Spawn EnergyCollector" display-tooltip-when-elided="true" name="SpawnEnergyCollectorButton" class="button" />
         </ui:VisualElement>
         <ui:VisualElement name="dev-toolkit" class="dev-toolkit" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column;">
-            <ui:SliderInt picking-mode="Ignore" label="SliderInt" value="0" high-value="1" name="NumberOfPlanetsSlider" class="slider" />
+            <ui:SliderInt picking-mode="Ignore" label="Spawn  Planets" value="0" high-value="10" name="NumberOfPlanetsSlider" class="slider" style="min-width: 300px;" />
             <ui:Button text="Start Host" display-tooltip-when-elided="true" name="StartHostButton" class="button" />
             <ui:Button text="Start Client" display-tooltip-when-elided="true" name="StartClientButton" class="button" />
             <ui:Button text="Quit To Menu?" display-tooltip-when-elided="true" name="QuitToMenuButton" class="button" />

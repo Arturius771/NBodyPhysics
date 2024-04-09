@@ -167,8 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22472825621aa614eb42f4acc22ddbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1119092060593637157, guid: 15139a05fbf962a4cb138bacd28f420c, type: 3}
-  intervalDistance: -2000
+  prefabs:
+  - {fileID: 1119092060593637157, guid: 15139a05fbf962a4cb138bacd28f420c, type: 3}
+  - {fileID: 8499151930075427724, guid: 3c126b154b4bf4c4cb8262266b9770f0, type: 3}
+  - {fileID: 5236889926335594299, guid: 86909caca1d3bf042a8165a1b33b5629, type: 3}
+  intervalDistance: -500
   uiDocument: {fileID: 132092058}
   targetSliderId: NumberOfPlanetsSlider
 --- !u!1 &132092058
