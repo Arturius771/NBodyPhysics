@@ -15,16 +15,36 @@ public class CameraController : MonoBehaviour {
     private bool increaseSpeed = false;
     private bool dragPanMoveActive = false;
 
-    void Update() {
-        RotateCamera();
-        CameraMovement();
-    }
+    private float zoomLevel;
+    public float sensitivity = 1;
+
+    [SerializeField] private GameObject mainCamera;
+    [SerializeField] private GameObject target;
 
     void Start()
     {
         StartCoroutine(IncreaseSpeed());
     }
-    
+
+    void Update(){
+        RotateCamera();
+        CameraMovement();
+
+        zoomLevel += Input.mouseScrollDelta.y * sensitivity;
+
+        Debug.Log(mainCamera.transform.position);
+
+        if (mainCamera.transform.position.y <= 200f) {
+            mainCamera.transform.position = mainCamera.transform.position;
+            Debug.Log("zoomLevel");
+            return;
+
+           
+        };
+
+        mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, target.transform.position, zoomLevel);
+    }
+
     void CameraMovement() {
 
         Vector3 inputDir = new(0, 0, 0);
