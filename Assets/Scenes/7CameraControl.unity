@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1501057095
+  GlobalObjectIdHash: 3863580348
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -603,7 +603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635062255435542443, guid: 2da44d127840dd4499b8def49db8b38f, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 657087122
+      value: 3298467586
       objectReference: {fileID: 0}
     - target: {fileID: 9014703897143926202, guid: 2da44d127840dd4499b8def49db8b38f, type: 3}
       propertyPath: m_IsActive
@@ -665,8 +665,8 @@ MonoBehaviour:
   rotateSpeed: 100
   edgeScrollSize: 20
   dragPanSpeed: 2
-  edgePanAllowed: 0
-  dragPanAllowed: 0
+  edgePanAllowed: 1
+  dragPanAllowed: 1
   mainCamera: {fileID: 256657271}
   target: {fileID: 1766712971}
 --- !u!114 &990143462
