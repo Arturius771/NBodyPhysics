@@ -92,7 +92,6 @@ public class CameraController : MonoBehaviour {
         if (Input.GetKey(KeyCode.E)) rotateDir = +1f;
         if (Input.GetKey(KeyCode.Q)) rotateDir = -1f;
 
-        //transform.eulerAngles += new Vector3(0, rotateDir * rotateSpeed * Time.deltaTime, 0);
 
         transform.RotateAround(target.transform.position, Vector3.up, 20 * Time.deltaTime * rotateDir);
     }
