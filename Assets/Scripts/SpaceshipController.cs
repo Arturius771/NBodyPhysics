@@ -8,6 +8,7 @@ public class SpaceshipController : MonoBehaviour
     [SerializeField] private int stopMovingRange = 50;
     [SerializeField] private LayerMask clickLayer;
     public bool selected = false;
+    public bool canBeBulkSelected = false;
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();

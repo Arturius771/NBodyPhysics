@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BuildEnergyCollectorStrategy
   m_EditorClassIdentifier: 
   prefabToBuild: {fileID: 7249162697132655909, guid: 4d0f34b76373714449dd814453c8e99d, type: 3}
-  metalResourceCost: 100
+  metalResourceCost: 10
   energyResourceDrainRate: 0
   buildTime: 10

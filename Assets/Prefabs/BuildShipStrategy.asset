@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToBuild: {fileID: 4602997022148030758, guid: a46a220e40edd6a428be3188e1feddb1, type: 3}
   metalResourceCost: 100
-  energyResourceDrainRate: 10
+  energyResourceDrainRate: 100
   buildTime: 2

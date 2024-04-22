@@ -18,7 +18,7 @@ public class SelectionController : MonoBehaviour
 
 
     private void SetSelectedInShipController(SpaceshipController ship) {
-        ship.selected = true; 
+        ship.selected = true;
     }
 
     private void SetDeselectedInShipController(SpaceshipController ship) {
@@ -47,11 +47,16 @@ public class SelectionController : MonoBehaviour
     }
 
     private void SelectAllShips() {
+
+        ClearSelectedShips();
+
         SpaceshipController[] spaceships = FindObjectsOfType<SpaceshipController>();
         selectedShips.AddRange(spaceships);
 
         foreach (SpaceshipController ship in selectedShips) {
-            SetSelectedInShipController(ship);
+            if(ship.canBeBulkSelected) {
+                SetSelectedInShipController(ship);
+            }
         }
     }
 

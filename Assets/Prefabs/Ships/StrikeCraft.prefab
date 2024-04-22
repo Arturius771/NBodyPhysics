@@ -463,12 +463,24 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4193446505442668477, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193446505442668477, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
       propertyPath: m_Center.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4560092488048576680, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
       propertyPath: checkFrequency
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640481774271702871, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: canBeSelected
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640481774271702871, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
+      propertyPath: canBeBulkSelected
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4648411420110118106, guid: c2b803d3710ee9f448f3c7792bcc204d, type: 3}
       propertyPath: m_Name

@@ -41,7 +41,7 @@ public class FactoryController : MonoBehaviour
             metalResource += logisticsNode.GetMetalResource(); 
         }
         SetUIResourcesAvailableText();
-        logisticsNode.SetMetalResource(0);
+        //logisticsNode.SetMetalResource(0); // TODO - refactor logistics nodes
         ShowResourceHud();
     }
 

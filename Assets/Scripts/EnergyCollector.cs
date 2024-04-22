@@ -24,7 +24,7 @@ public class EnergyCollector : MonoBehaviour
         distance = Vector3.Distance(this.gameObject.transform.position, targetStar.transform.position);
 
         
-        energy += 10 / (Math.Pow(distance, 2) * (Math.PI * 4));
+        energy += 1000000 / (Math.Pow(distance, 2) * (Math.PI * 4));
     }
 
     private IEnumerator CalculateEnergyDifference() {
