@@ -23,11 +23,11 @@ public class MainMenuController : MonoBehaviour
     }
 
     private void OnStartButtonClick() {
-        SceneManager.LoadScene("5SpaceshipControl");
+        SceneManager.LoadScene("8Playtest");
     }
 
     private void OnSendFeedbackButtonClick() {
-        Application.OpenURL("https://docs.google.com/forms/d/1fFBFRc8WF5dCRHoOMPoxWIUaMGMCVrceE_lyHu3tRp0/edit");
+        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSd_CNFJf0dXxToYuNMiRq0nao0gTU7P0126-00Wu3UyNRLBoQ/viewform");
     }
 
     private void OnQuitButtonClick() {

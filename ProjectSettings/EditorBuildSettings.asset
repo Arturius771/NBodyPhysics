@@ -23,13 +23,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/3Playtest.unity
     guid: 90a61ee1eafd166469ff40ca381afe71
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/5SpaceshipControl.unity
     guid: 7351da3a10ef855428e19484c65335d7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/6PlanetSpawning.unity
     guid: 63e19ff6665b1674fa0abcbe79e73db5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/7CameraControl.unity
     guid: 222eb29b5d0e3f249a58b8fff1e031ca
   - enabled: 1
