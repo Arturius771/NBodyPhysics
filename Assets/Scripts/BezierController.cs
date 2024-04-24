@@ -14,7 +14,7 @@ public class BezierController : MonoBehaviour
     [Range(0.0f, 1.0f)]
     [SerializeField] private float time;
 
-    public float sensitivity = 1f;
+    public float sensitivity = 0.05f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,16 +28,16 @@ public class BezierController : MonoBehaviour
 
         bool scrollingUp = Input.mouseScrollDelta.y == 1;
         bool scrollingDown = Input.mouseScrollDelta.y == -1;
-        bool canScrollUp = time < 0.9f;
+        bool canScrollUp = time < time - 0.01f;
         bool canScrollDown = time > 0.0f;
 
         if (scrollingUp && canScrollUp) {
-            time += 0.05f * sensitivity;
+            time += 1 * sensitivity;
         }
        
         if (scrollingDown && canScrollDown)
         {
-            time -= 0.05f * sensitivity;
+            time -= 1 * sensitivity;
         }
 
         controlledObject.transform.position = GetPointOnBezierCurve(startPoint.transform.position, controlPoint1.transform.position, controlPoint2.transform.position, target.transform.position, time);
