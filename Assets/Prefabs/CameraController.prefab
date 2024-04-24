@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3863580348
+  GlobalObjectIdHash: 2834654788
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 400
-  rotateSpeed: 100
+  rotateSpeed: 1000
   edgeScrollSize: 20
   dragPanSpeed: 2
   edgePanAllowed: 1
@@ -483,7 +483,7 @@ MonoBehaviour:
   target: {fileID: 8059017333677760030}
   controlledObject: {fileID: 2205893051946539573}
   time: 0
-  sensitivity: 1
+  sensitivity: 0.05
 --- !u!1 &8059017333677760030
 GameObject:
   m_ObjectHideFlags: 0

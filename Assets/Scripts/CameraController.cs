@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour {
 
     // TODO: Create base camera class and inherit
     [SerializeField] private float moveSpeed = 50f;
-    [SerializeField] private float rotateSpeed = 50f;
+    [SerializeField] private float rotateSpeedSensitivity = 5f;
     [SerializeField] private int edgeScrollSize = 0;
     [SerializeField] private float dragPanSpeed = 2f;
     [SerializeField] private bool edgePanAllowed = false;
@@ -84,13 +84,10 @@ public class CameraController : MonoBehaviour {
 
     }
     void RotateCamera() {
-        float rotateDir = 0f;
+        float rotateDir = 0f;        
 
-
-        
-
-        if (Input.GetKey(KeyCode.E)) rotateDir = +1f;
-        if (Input.GetKey(KeyCode.Q)) rotateDir = -1f;
+        if (Input.GetKey(KeyCode.E)) rotateDir = +1f * rotateSpeedSensitivity;
+        if (Input.GetKey(KeyCode.Q)) rotateDir = -1f * rotateSpeedSensitivity;
 
 
         transform.RotateAround(target.transform.position, Vector3.up, 20 * Time.deltaTime * rotateDir);

@@ -28,7 +28,7 @@ public class BezierController : MonoBehaviour
 
         bool scrollingUp = Input.mouseScrollDelta.y == 1;
         bool scrollingDown = Input.mouseScrollDelta.y == -1;
-        bool canScrollUp = time < time - 0.01f;
+        bool canScrollUp = time < .90f;
         bool canScrollDown = time > 0.0f;
 
         if (scrollingUp && canScrollUp) {
