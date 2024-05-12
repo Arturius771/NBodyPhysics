@@ -10,7 +10,7 @@
             <ui:Button text="Spawn EnergyCollector" display-tooltip-when-elided="true" name="SpawnEnergyCollectorButton" class="button" />
         </ui:VisualElement>
         <ui:VisualElement name="dev-toolkit" class="dev-toolkit" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column;">
-            <ui:SliderInt picking-mode="Ignore" label="Spawn  Planets" value="0" high-value="10" name="NumberOfPlanetsSlider" class="slider" style="min-width: 300px;" />
+            <ui:SliderInt picking-mode="Ignore" label="Spawn  Planets" value="0" high-value="10" name="NumberOfPlanetsSlider" class="slider" style="min-width: 300px; opacity: 1;" />
             <ui:Button text="Start Host" display-tooltip-when-elided="true" name="StartHostButton" class="button" />
             <ui:Button text="Start Client" display-tooltip-when-elided="true" name="StartClientButton" class="button" />
             <ui:Button text="Quit To Menu?" display-tooltip-when-elided="true" name="QuitToMenuButton" class="button" />
