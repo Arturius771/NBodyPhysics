@@ -12,38 +12,52 @@ public class CameraController : MonoBehaviour {
     [SerializeField] private float dragPanSpeed = 2f;
     [SerializeField] private bool edgePanAllowed = false;
     [SerializeField] private bool dragPanAllowed = false;
+    [SerializeField] private float cameraBoundsBox = 3500;
 
     Vector2 lastMousePosition = new(0, 0);
-    private bool increaseSpeed = false;
     private bool dragPanMoveActive = false;
+    private new Transform transform;
+    private float originalMoveSpeed;
 
-    [SerializeField] private GameObject mainCamera;
-    public GameObject target;
+    public GameObject target; // This can probably be private and use a layer name to find this object in the scene
 
     void Start() {
-        StartCoroutine(IncreaseSpeed());
+        transform = this.gameObject.GetComponent<Transform>();
+        originalMoveSpeed = moveSpeed;
     }
 
     void Update() {
         RotateCamera();
         CameraMovement();
+        RestrictCamera();
     }
-    void CameraMovement() {
 
+    private void RestrictCamera()
+    {
+        // (x, y, z)
+        transform.position = new(Mathf.Clamp(transform.position.x, -cameraBoundsBox, cameraBoundsBox), transform.position.y, Mathf.Clamp(transform.position.z, -cameraBoundsBox, cameraBoundsBox));
+    }
+
+    void CameraMovement() {
         Vector3 inputDir = new(0, 0, 0);
 
+        // Forward
         if (Input.GetKey(KeyCode.W) || Input.mousePosition.y > Screen.height - edgeScrollSize && edgePanAllowed) {
             inputDir.z = +1f;
+
         }
 
+        // Backward
         if (Input.GetKey(KeyCode.S) || Input.mousePosition.y < edgeScrollSize && edgePanAllowed) {
             inputDir.z = -1f;
         }
 
+        // Left 
         if (Input.GetKey(KeyCode.A) || Input.mousePosition.x < edgeScrollSize && edgePanAllowed) {
             inputDir.x = -1f;
         }
 
+        // Right
         if (Input.GetKey(KeyCode.D) || Input.mousePosition.x > Screen.width - edgeScrollSize && edgePanAllowed) {
             inputDir.x = +1f;
         }
@@ -68,20 +82,17 @@ public class CameraController : MonoBehaviour {
 
         Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x;
 
+        if (Input.GetKey(KeyCode.LeftShift) )
+        {
+            moveSpeed = 3f * originalMoveSpeed;
+        }
+        else {
+            moveSpeed = originalMoveSpeed;
+        }
+
         transform.position += moveSpeed * Time.deltaTime * moveDir;
     }
 
-    IEnumerator IncreaseSpeed() {
-        yield return new WaitForSeconds(.5f);
-
-        if (increaseSpeed) {
-
-            moveSpeed += 100;
-        }
-
-        StartCoroutine(IncreaseSpeed());
-
-    }
     void RotateCamera() {
         float rotateDir = 0f;        
 
