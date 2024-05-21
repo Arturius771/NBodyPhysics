@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Netcode;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "BuildShipStrategy", menuName = "*/Strategies/BuildShipStrategy")]
 public class BuildShipStrategy : BuildStrategy {
@@ -8,7 +9,16 @@ public class BuildShipStrategy : BuildStrategy {
     [SerializeField] private int buildTime = 30;
 
     public override void Build(Transform spawnLocation) {
-        Instantiate(prefabToBuild, spawnLocation.position, Quaternion.identity);
+        GameObject ship = Instantiate(prefabToBuild, spawnLocation.position, Quaternion.identity);
+
+        NetworkManager networkManager = FindObjectsOfType<NetworkManager>()[0];
+
+        ulong id = networkManager.GetComponent<NetworkManager>().LocalClientId;
+
+        Debug.Log(id);
+        Debug.Log(networkManager.IsClient);
+
+        ship.GetComponent<NetworkObject>().SpawnWithOwnership(id);
     }
 
     public override int GetMetalResourceCost() {
